@@ -1,0 +1,90 @@
+b,
+em,
+i,
+small,
+strong,
+sub,
+sup,
+ins,
+del,
+mark,
+code,
+kbd,
+samp,
+var,
+pre,
+abbr,
+bdo,
+q,
+cite,
+blockquote,
+dfn,
+br,
+hr,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+ul,
+div,
+wbr {
+  -webkit-font-smoothing: antialiased;
+  color: var(--color-W0);
+}
+
+
+// Title H1, H2, H3, H4, H5, H6
+
+.extra-title-h1 {
+  @include extra-title-h1();
+}
+
+.extra-title-h2 {
+  @include extra-title-h2();
+}
+.extra-title-h3 {
+  @include extra-title-h3();
+}
+.extra-title-h4 {
+  @include extra-title-h4();
+}
+.extra-title-h5 {
+  @include extra-title-h5();
+}
+
+// DISPLAY TEXT
+.text-style-t1 {
+  @include text-style-t1();
+}
+.text-style-t2 {
+  @include text-style-t2();
+}
+.text-style-t3 {
+  @include text-style-t3();
+}
+.text-style-t4 {
+  @include text-style-t4();
+}
+
+/*
+ w-1 = 100%
+ w-2 = 75%
+ w-3 = 50%
+ w-4 = 33.333%
+ w-5 = 25%
+ w-6 = 16.6%
+ w-7 = 14.2%
+ w-8 = 12.2%
+ w-9 = 11.1%
+ */
+@each $name, $value in $widths {
+  .w-#{$name} {
+    width: #{$value} !important;
+  }
+}
