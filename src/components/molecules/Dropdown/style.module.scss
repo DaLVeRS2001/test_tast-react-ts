@@ -1,0 +1,33 @@
+.dropdown{
+  &__category{}
+  &__size{}
+
+
+  .default{}
+  .active{}
+
+  .categories{
+    img{}
+    span{}
+    &__items{}
+    &__item{}
+  }
+
+  .size{
+    img{}
+    span{}
+    &__items{}
+    &__item{
+      input{}
+      span{}
+    }
+  }
+
+  .clear{
+    span{}
+  }
+
+
+  h1{}
+  h2{}
+}
