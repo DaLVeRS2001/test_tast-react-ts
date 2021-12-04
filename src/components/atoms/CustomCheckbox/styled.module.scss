@@ -1,0 +1,32 @@
+@import "../../../scss/utils/variables";
+@import "../../../scss/utils/mixins";
+
+.customCheckbox{
+  display: flex;
+  margin-bottom: $subline * 3;
+
+  label{
+    display: inline-flex;
+    margin-right: ($subline * 3) - 2;
+    &:before{
+      content: '';
+      border-radius: 5px;
+      width: $subline * 3;
+      height: $subline * 3;
+      border: 1px solid $color-A1-a;
+    }
+  }
+
+  input{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    &:checked+label::before {
+      content: '✓';
+      @include dInlineFlex(center, null, center);
+      font-size: ($subline * 2) + 1;
+      border: 1px solid transparent;
+      background: $color-G0;
+    }
+  }
+}

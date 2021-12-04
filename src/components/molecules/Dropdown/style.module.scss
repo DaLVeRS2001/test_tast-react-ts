@@ -1,33 +1,74 @@
-.dropdown{
-  &__category{}
-  &__size{}
+@import "../../../scss/utils/variables";
+@import "../../../scss/utils/mixins";
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
 
 
-  .default{}
-  .active{}
+.dropdown {
+  @include dflex(null, null, space-around);
+  font-size: $subline * 3;
+  background: $color-A8-a;
+  height: $baseline * 18;
+  padding: $baseline;
 
-  .categories{
-    img{}
-    span{}
-    &__items{}
-    &__item{}
+  hr {
+    border: none;
+    height: $subline / 4;
+    color: $color-D0-1;
+    background: black;
+  }
+  h1 {
+    margin: 0;
+    color: $color-D6;
+    margin-bottom: $baseline / 1.25;
+    text-align: center;
   }
 
-  .size{
-    img{}
-    span{}
-    &__items{}
-    &__item{
-      input{}
-      span{}
+  &__category { width: map-get($widths, '1') }
+
+  &__size {
+    width: map-get($widths, '1');
+
+    .wrapper {
+      h2 { padding-bottom: ($baseline / 2) - .5 }
+      div:nth-child(1) { h2{ margin-left: map-get($widths, '1')  / 2 } }
+      div:nth-child(2) { h2 { margin-left: $baseline * 2.4 } }
     }
   }
 
-  .clear{
-    span{}
+
+  &__sizeBlock {
+    @include dflex(null, wrap, space-around);
+
+    div {
+      position: relative;
+
+      input {
+        width: map-get($widths, '1');
+        height: map-get($widths, '1');
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        left: 0;
+      }
+
+      label {
+        cursor: pointer;
+        @include dflex(center, null, center);
+        margin: 0 $subline $subline 0;
+        width: $baseline * 2.6;
+        height: $baseline * 1.8;
+        border-radius: $subline + 1;
+        color: $color-A1-a;
+        background: $color-D2;
+      }
+
+      input[type="checkbox"]:checked ~ label {
+        background: $color-G0;
+      }
+    }
   }
-
-
-  h1{}
-  h2{}
 }

@@ -258,6 +258,12 @@
   flex-wrap: $wrap;
   align-items: $al;
 }
+@mixin dInlineFlex($al: stretch, $wrap: wrap, $just: space-between) {
+  display: inline-flex;
+  justify-content: $just;
+  flex-wrap: $wrap;
+  align-items: $al;
+}
 
 // mixins
 

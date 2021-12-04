@@ -1,0 +1,29 @@
+@import "../../../scss/utils/variables";
+@import "../../../scss/utils/mixins";
+
+.listTitle {
+  display: flex;
+  cursor: pointer;
+  margin-bottom: $baseline - 5;
+
+  img { width: $subline * 2 }
+  h4 { margin: 0 0 0 $subline * 3 }
+}
+
+.dropdownPart {
+  margin: 0 ($baseline + 5) 0 ($baseline + 5);
+  width: $baseline * 11;
+
+  h2 {
+    color: $color-D6;
+    padding-bottom: $baseline + 5;
+    margin: 0 0 ($baseline - 13) ($subline * 2);
+  }
+
+  .dropdownPart__drop {
+    .dropdownPart__dropSwitcher { @include dflex(null, null, space-between) }
+    .dropdownPart__list {
+      width: map-get($widths, '1') + 5;
+    }
+  }
+}
