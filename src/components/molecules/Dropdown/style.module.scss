@@ -54,7 +54,6 @@
         opacity: 0;
         left: 0;
       }
-
       label {
         cursor: pointer;
         @include dflex(center, null, center);
@@ -64,9 +63,15 @@
         border-radius: $subline + 1;
         color: $color-A1-a;
         background: $color-D2;
+
+        &[data-disabled='true']{
+          color: $color-D3;
+          cursor: default;
+          background: $color-D1-tint-a;
+        }
       }
 
-      input[type="checkbox"]:checked ~ label {
+      input:checked ~ label[data-disabled='false'] {
         background: $color-G0;
       }
     }

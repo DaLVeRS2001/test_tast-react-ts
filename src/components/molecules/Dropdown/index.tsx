@@ -51,8 +51,8 @@ const Dropdown: FC = () => {
                             <div className={styled.dropdown__sizeBlock}>
                                 {sizes.map((el, idx) => (
                                     <div key={el}>
-                                        <input type="checkbox" name={el} id={`size${idx + title}`}/>
-                                        <label htmlFor={`size${idx + title}`}>
+                                        <input type="radio" name="size" id={`size${idx + title}`}/>
+                                        <label data-disabled={idx === 4 || idx === 5} htmlFor={`size${idx + title}`}>
                                             {el}
                                         </label>
                                     </div>
